@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script type="text/javascript" src="frontend.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="service01/styles.css">
+  <script type="text/javascript" src="service01/frontend.js"></script>
+
+  <title>Song Straw</title>
+
+</head>
+
+<body>
+
+  <img src="https://gitlab.sdu.dk/semester-project-e2020/team-09-media-acquisition/template/-/wikis/uploads/4c3ccf9479425eb90b526b43ad252776/image.png" alt="Song Straw">
+  <br>
+  Test links:
+  <br>
+  
+  <button type="button" onclick="uploadClicked('www.youtube.com/watch?v=UQn-7GCh2r0')" class="btn btn-primary">ToTo Africa</button>
+  <button type="button" onclick="uploadClicked('www.youtube.com/watch?v=oRdxUFDoQe0')" class="btn btn-primary">Beat it</button>
+  <button type="button" onclick="uploadClicked('www.youtube.com/watch?v=60ItHLz5WEA')" class="btn btn-primary">Faded</button>
+  <button type="button" onclick="uploadClicked('www.youtube.com/watch?v=dvgZkm1xWPE')" class="btn btn-primary">Viva La Vida</button>
+  <button type="button" onclick="uploadClicked('www.youtube.com/watch?v=k4V3Mo61fJM')" class="btn btn-primary">Fix you</button>
+  <button type="button" onclick="uploadClicked('www.youtube.com/watch?v=h_D3VFfhvs4')" class="btn btn-primary">Smooth criminal</button>
+  <button type="button" onclick="uploadClicked('www.youtube.com/watch?v=sOnqjkJTMaA')" class="btn btn-primary">Thriller</button>
+  <button type="button" onclick="uploadClicked('www.youtube.com/watch?v=dQw4w9WgXcQ')" class="btn btn-primary">Mystery</button>
+
+  <p id="uploadConfirm"></p>
+
+  <img style="display: none;" id="thumbnailID" class="img-fluid" alt="Responsive image">
+
+  <input class="form-control" id='link' placeholder="Youtube Link"
+    value="https://www.youtube.com/watch?v=HgzGwKwLmgM"></input>
+  <br>
+  <button id="linkButton" type="button" onclick="uploadClicked(document.getElementById('link').value)"
+    class="btn btn-primary">Upload</button>
+  <br>
+  <br>
+
+  <script>
+    //https://stackoverflow.com/questions/155188/trigger-a-button-click-with-javascript-on-the-enter-key-in-a-text-box/10626419#10626419
+    var inputbox = document.getElementById("link");
+    inputbox.addEventListener("keyup", function (event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("linkButton").click();
+      }
+    });
+  </script>
+
+  <div id="meta-form">
+    <div class="form-row">
+
+      <div class="form-group col-md-6">
+        <label for="Title">Title</label>
+        <input class="form-control" id="Title" placeholder="Title">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="Artist">Artist</label>
+        <input class="form-control" id="Artist" placeholder="Artist">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="ReleaseDate">Release Date</label>
+        <input class="form-control" id="ReleaseDate" placeholder="Release Date">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="Genre">Genre</label>
+        <input class="form-control" id="Genre" placeholder="Genre">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="Producer">Producer</label>
+        <input class="form-control" id="Producer" placeholder="Producer">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="Writers">Writers</label>
+        <input class="form-control" id="Writers" placeholder="Writers">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="Co-artist">Co-artist</label>
+        <input class="form-control" id="CoArtist" placeholder="Co-artist">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="Album">Album</label>
+        <input class="form-control" id="Album" placeholder="Album">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="RecordLabel">Record Label</label>
+        <input class="form-control" id="RecordLabel" placeholder="Record Label">
+      </div>
+
+    </div>
+    <button onclick="formSubmit()" , type="button" class="btn btn-primary">Submit</button>
+  </div>
+
+</body>
+
+</html>

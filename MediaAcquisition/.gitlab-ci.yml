@@ -1,0 +1,13 @@
+stages:
+    - lint
+    - versioning
+    - build
+    - test
+    - deploy
+
+include:
+    - project: 'semester-project-e2020/team-12-continuous-integration/resources'
+      ref: master
+      file: '9.yml'
+# Set [GROUPNUMBER] to you team number ex. '[GROUPNUMBER].yml' becomes '5.yml'
+
